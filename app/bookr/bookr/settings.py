@@ -90,7 +90,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'OPTIONS': {
-            'options': '-c search_path=reviews,public'
+            'options': '-c search_path=admin'
+        },
+        'NAME': 'bookr',
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': 'djpg-master',
+        'PORT': PORT,
+    },
+    'reviews': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS': {
+            'options': '-c search_path=reviews'
         },
         'NAME': 'bookr',
         'USER': USER,
@@ -99,19 +110,6 @@ DATABASES = {
         'PORT': PORT,
     }
 }
-
-# ,
-#     'reviews': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'OPTIONS': {
-#             'options': '-c search_path=reviews'
-#         },
-#         'NAME': 'bookr',
-#         'USER': USER,
-#         'PASSWORD': PASSWORD,
-#         'HOST': 'djpg-master',
-#         'PORT': PORT,
-#     },
 
 
 # Password validation

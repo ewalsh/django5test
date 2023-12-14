@@ -17,3 +17,12 @@ Testing an old book project in django 5
 `mkdir reviews/templates`
 
 grant priviledges to sql_admin for the bookr database and all existing schemas and connect with sql
+
+# Create a virtual environment for local IDE
+
+# Be careful/purposeful with migrations
+python manage.py showmigrations
+python manage.py migrate --database=default
+
+python manage.py makemigrations reviews
+python manage.py migrate reviews --database=reviews
