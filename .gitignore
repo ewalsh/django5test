@@ -1,3 +1,9 @@
+# project specific
+docker-compose.yml
+pgdata_master/
+pgdata_slave/
+sqladmin_data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
