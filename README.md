@@ -19,6 +19,7 @@ Testing an old book project in django 5
 grant priviledges to sql_admin for the bookr database and all existing schemas and connect with sql
 
 # Create a virtual environment for local IDE
+create a virtual environment, open editor, install requirements
 
 # Be careful/purposeful with migrations
 python manage.py showmigrations
