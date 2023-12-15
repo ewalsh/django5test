@@ -32,14 +32,16 @@ if mode == 'production':
     DEBUG = False
 else:
     DEBUG = True
+    CSRF_TRUSTED_ORIGINS = ["http://localhost:1180"]
 
 ALLOWED_HOSTS = ["dj5test"]
 
 
-# Application definition
+# Application definition     # "reviews.apps.MainAdminConfig",
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    # "django.contrib.admin",
+    "apps.MainAdminConfig",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -108,8 +110,21 @@ DATABASES = {
         'PASSWORD': PASSWORD,
         'HOST': 'djpg-master',
         'PORT': PORT,
+    },
+    'reviews-repl': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS': {
+            'options': '-c search_path=reviews'
+        },
+        'NAME': 'bookr',
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': 'djpg-slave',
+        'PORT': PORT,
     }
 }
+
+DATABASE_ROUTERS = ['router.SessionRouter', 'router.AuthRouter', 'router.DbRouter']
 
 
 # Password validation
