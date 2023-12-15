@@ -126,6 +126,7 @@ DATABASES = {
 
 DATABASE_ROUTERS = ['router.SessionRouter', 'router.AuthRouter', 'router.DbRouter']
 
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

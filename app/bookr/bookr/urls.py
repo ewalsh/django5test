@@ -17,12 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import reviews.views
+from django.urls import include, path
+from bookr.views import profile
 # from reviews.admin import reviews_admin_site
 # from .admin import main_admin_site
 
 urlpatterns = [
+    path('accounts/', include(('django.contrib.auth.urls', 'auth'),
+                              namespace='accounts')),
     path("admin/", admin.site.urls),
     # path("reviews/admin/", reviews_admin_site.urls),
+    path('accounts/profile/', profile, name='profile'),
     path('', reviews.views.welcome_view, name='home'),
     path('books/', reviews.views.book_list, name='book_list')
 ]
