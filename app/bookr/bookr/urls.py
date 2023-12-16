@@ -29,6 +29,9 @@ urlpatterns = [
                               namespace='accounts')),
     path("admin/", admin.site.urls),
     path('api/first_api_view', reviews.api_views.first_api_view),
+    path('api/all_books', reviews.api_views.AllBooks.as_view()),
+    path('api/login', reviews.api_views.Login.as_view(), name='login'),
+    # path('api/login', api_views.Login.as_view(), name='login')
     # path("reviews/admin/", reviews_admin_site.urls),
     path('accounts/profile/', profile, name='profile'),
     path('', reviews.views.welcome_view, name='home'),

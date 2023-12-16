@@ -41,7 +41,7 @@ class Book(models.Model):
         db_table = "books"
     # string method    
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Contributor(models.Model):
